@@ -1,5 +1,11 @@
 // Function to handle checkbox changes
 function handleCheckboxChange(roomId, isChecked) {
+  // Change the list where the row is
+  const targetListId = isChecked ? "hiddenRooms" : "displayedRooms";
+  const dynamicList = document.getElementById(targetListId);
+  const targetRow = document.getElementById(roomId);
+  dynamicList.append(targetRow);
+
   // Retrieve hidden room IDs from local storage
   browser.storage.local.get(['hiddenRoomsIds'], result => {
     const hiddenRoomsIds = result.hiddenRoomsIds || [];
@@ -32,9 +38,9 @@ function handleCheckboxChange(roomId, isChecked) {
 // Function to add a row with a checkbox to the popup
 function addRowWithCheckbox(roomId, roomName, isHidden) {
   // Create a new row element
-  const dynamicList = document.getElementById("dynamicList");
   const row = document.createElement("div");
   row.classList.add("row");
+  row.setAttribute("id", roomId);
 
   // Create an input element for the checkbox
   const switchInput = document.createElement("input");
@@ -50,8 +56,10 @@ function addRowWithCheckbox(roomId, roomName, isHidden) {
   // Append the checkbox and label to the row
   row.appendChild(switchInput);
   row.appendChild(label);
-
+  
   // Append the row to the dynamic list
+  const targetListId = isHidden ? "hiddenRooms" : "displayedRooms";
+  const dynamicList = document.getElementById(targetListId);
   dynamicList.appendChild(row);
 
   // Add an event listener to the checkbox
