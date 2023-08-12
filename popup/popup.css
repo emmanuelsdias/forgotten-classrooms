@@ -1,0 +1,17 @@
+/* Style for the row */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+/* Style for the label */
+.label {
+  flex: 1;
+}
+
+/* Style for the switch */
+.switch {
+  margin-left: 20px;
+}

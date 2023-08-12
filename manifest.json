@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Forgotten Classrooms",
+  "version": "1.0",
+  "description": "This extension enables students to locally hide forgotten classrooms which the teacher hasn't archived yet.",
+  "homepage_url": "https://github.com/emmanuelsdias/forgotten-classrooms",
+  "icons": {
+    "16": "icons/forgotten-classrooms-16.png",
+    "24": "icons/forgotten-classrooms-24.png",
+    "32": "icons/forgotten-classrooms-32.png",
+    "48": "icons/forgotten-classrooms-48.png",
+    "64": "icons/forgotten-classrooms-64.png",
+    "128": "icons/forgotten-classrooms-128.png"
+  },
+
+  "permissions": ["activeTab", "storage", "tabs"],
+  
+  "content_scripts": [
+    {
+      "matches": ["https://*.classroom.google.com/*"],
+      "js": ["content/content.js"]
+    }
+  ],
+
+  "page_action": {
+    "default_title": "Forgotten Classrooms",
+    "default_popup": "popup/popup.html",
+    "show_matches": ["https://*.classroom.google.com/*"],
+    "default_icon": {
+      "19": "icons/forgotten-classrooms-19.png",
+      "32": "icons/forgotten-classrooms-32.png"
+    }
+  }
+}
+  
