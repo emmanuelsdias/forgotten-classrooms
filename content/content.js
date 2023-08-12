@@ -20,7 +20,7 @@ async function getHiddenRoomsIds() {
 
 // Return an array containing the ids from all classrooms retrieved from the current page
 function getAllRoomsIds() {
-  const rooms = document.querySelectorAll('div[role="group"] > [data-id]');
+  const rooms = document.querySelectorAll('div[role="section"] > [data-id]');
   const roomsIds = Array.from(rooms).map(room => room.getAttribute('data-id'));
   return roomsIds;
 }
@@ -44,7 +44,7 @@ browser.runtime.onMessage.addListener((msg, sender, response) => {
   if (msg.from === 'popup') {
     // Get classrooms information when page action is clicked
     if (msg.subject === 'requestRoomsInfo') {
-      const rooms = document.querySelectorAll('div[role="group"] > [data-id]');
+      const rooms = document.querySelectorAll('div[role="section"] > [data-id]');
       var roomsInfo = {};
       rooms.forEach((room) => {
         const id = room.getAttribute('data-id');
