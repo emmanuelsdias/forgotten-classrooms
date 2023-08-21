@@ -14,3 +14,7 @@ This extension is available in the official [Firefox add-on store](https://addon
 |:-----:|
 |<a href="https://addons.mozilla.org/en-US/firefox/addon/forgotten-classrooms/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" width="64"></a>|
 |[Download](https://addons.mozilla.org/en-US/firefox/addon/forgotten-classrooms/)|
+
+## Bugs
+
+Currently, this extension should be working as expected. However, updates to Google Classroom's website may break the extension in the future. In case you encounter a bug, please open an issue.
